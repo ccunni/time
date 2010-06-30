@@ -1,0 +1,67 @@
+==21978== Memcheck, a memory error detector.
+==21978== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==21978== Using LibVEX rev 1878, a library for dynamic binary translation.
+==21978== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==21978== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==21978== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==21978== For more details, rerun with: -v
+==21978==
+TestDate.c++
+.F.F.F.F.F.F.F
+
+
+!!!FAILURES!!!
+Test Results:
+Run:  7   Failures: 7   Errors: 0
+
+
+1) test: TestDate::test_constructor (F) line: 41 TestDate.c++
+assertion failed
+- Expression: false
+
+
+2) test: TestDate::test_equal_to (F) line: 53 TestDate.c++
+assertion failed
+- Expression: x == y
+
+
+3) test: TestDate::test_less (F) line: 66 TestDate.c++
+assertion failed
+- Expression: x < y
+
+
+4) test: TestDate::test_plus (F) line: 81 TestDate.c++
+assertion failed
+- Expression: x + 365 == y
+
+
+5) test: TestDate::test_minus (F) line: 93 TestDate.c++
+assertion failed
+- Expression: y - 366 == x
+
+
+6) test: TestDate::test_output (F) line: 106 TestDate.c++
+assertion failed
+- Expression: out.str() == "16 Jun 2008"
+
+
+7) test: TestDate::test_leap_year (F) line: 116 TestDate.c++
+assertion failed
+- Expression: Date<int>(1, 1, 2000).leap_year()
+
+
+Done.
+==21978==
+==21978== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 21 from 1)
+==21978== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==21978== malloc/free: 473 allocs, 467 frees, 178,648 bytes allocated.
+==21978== For counts of detected errors, rerun with: -v
+==21978== searching for pointers to 6 not-freed blocks.
+==21978== checked 125,148 bytes.
+==21978==
+==21978== LEAK SUMMARY:
+==21978==    definitely lost: 0 bytes in 0 blocks.
+==21978==      possibly lost: 0 bytes in 0 blocks.
+==21978==    still reachable: 122,880 bytes in 6 blocks.
+==21978==         suppressed: 0 bytes in 0 blocks.
+==21978== Rerun with --leak-check=full to see details of leaked memory.
